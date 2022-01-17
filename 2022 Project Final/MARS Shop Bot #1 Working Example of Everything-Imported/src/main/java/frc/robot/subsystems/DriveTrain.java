@@ -7,8 +7,6 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
-import edu.wpi.first.wpilibj.BuiltInAccelerometer;
-import edu.wpi.first.wpilibj.interfaces.Accelerometer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 //Import objects that are needed -> Lightbulb will import automatically
@@ -20,7 +18,6 @@ public class DriveTrain extends SubsystemBase {
   //Create subsystem here...
 
   TalonSRX leftFront, leftRear, rightFront, rightRear;
-  Accelerometer accelerometer;
   //Create necessary TalonSRX motor controllers
 
   /** Creates a new DriveTrain. */
@@ -29,8 +26,6 @@ public class DriveTrain extends SubsystemBase {
     leftRear = new TalonSRX(Constants.LeftRearID);
     rightFront = new TalonSRX(Constants.RightFrontID);
     rightRear = new TalonSRX(Constants.RightRearID);
-
-    accelerometer = new BuiltInAccelerometer();
     //Define TalonSRX motor controllers with their CAN IDs from Constants
 
     rightFront.setInverted(true);
